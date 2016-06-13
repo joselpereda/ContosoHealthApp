@@ -1,0 +1,276 @@
+﻿<Page
+    x:Class="zxdemo.MainPage"
+    IsTabStop="false"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:zxdemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" >
+
+    <Grid Background="White">
+
+        <Grid Margin="20,20,20,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+
+
+            </Grid.RowDefinitions>
+
+
+
+
+
+            <!--header-->
+            <Grid Grid.Row="0" Grid.ColumnSpan="6" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Foreground="#0094ff" FontFamily="Segoe UI Light" Margin="0,0,0,6" HorizontalAlignment="Right">Contoso Healthcare</TextBlock>
+                    <TextBlock Foreground="Gray" FontFamily="Segoe UI Light" FontSize="45" HorizontalAlignment="Center">Patient Summary System</TextBlock>
+                </StackPanel>
+            </Grid>
+
+            <!-- textbox and buttons -->
+            <Grid Grid.Row="1" Grid.Column="0">
+                <TextBox Name="TextInput" Margin="0,0,0,5" MinWidth="200"></TextBox>
+            </Grid>
+
+            <Grid Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="5">
+
+                <StackPanel Orientation="Horizontal" Margin="1,0,0,0" HorizontalAlignment="Right">
+                    <TextBlock x:Name="msg" Text="" Foreground="Red" />
+
+                    <Button Margin="50,0,0,0" Style="{StaticResource appButtonStyle}" Name="ButtonSearch" Click="ButtonSearch_Click" IsEnabled="True">Search</Button>
+                    <Button Margin="50,0,0,0" Style="{StaticResource appButtonStyle}" Name="ButtonAdd" Click="ButtonAdd_Click" IsEnabled="True">Add</Button>
+                    <Button Margin="50,0,0,0" Style="{StaticResource appButtonStyle}" Name="ButtonUpdate" Click="ButtonUpdate_Click" IsEnabled="True">Update</Button>
+
+                    <Button Margin="50,0,0,0"  Style="{StaticResource appButtonStyle}" Name="ButtonPredict" Click="ButtonPredict_Click"  IsEnabled="True">Predict</Button>
+                    <Button Margin="50,0,0,0" Style="{StaticResource appButtonStyle}" Name="ButtonBackToMain" Click="ButtonPowerBI_Click" >Power BI</Button>
+                </StackPanel>
+            </Grid>
+
+
+
+            <!--Patient Data - left column -->
+            <Grid Grid.Row="2" Grid.Column="0" Margin="0,10,0,0" VerticalAlignment="Top">
+                <StackPanel Orientation="Vertical">
+
+                    <TextBlock x:Name="Patient_lable" Text="Patient Number:" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock x:Name="Encounter_id_lable" Text="Encounter_id:" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock x:Name="First_name_lable" Text="First_name:" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock x:Name="Last_name_lable" Text="Last_name:" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock x:Name="Address_lable" Text="Address:" Style="{StaticResource TextBlockStyle}" />
+
+
+                    <TextBlock x:Name="Age_lable" Text="Age:" Style="{StaticResource TextBlockStyle}"/>
+                    <TextBlock x:Name="Discharge_time_lable" Text="Discharge_time:" Style="{StaticResource TextBlockStyle}"/>
+                    <TextBlock x:Name="Date_of_birth_lable" Text="Date_of_birth:" Style="{StaticResource TextBlockStyle}"/>
+
+
+                    <TextBlock x:Name="Gender_lable" Text="Gender:" Style="{StaticResource TextBlockStyle}" />
+
+
+                    <TextBlock x:Name="timeinhopital_lable" Text="Time in hopital:" Style="{StaticResource TextBlockStyle}" />
+
+                    <TextBlock x:Name="metformin_lable" Text="Metformin:" Style="{StaticResource TextBlockStyle}" />
+
+                    <TextBlock x:Name="insulin_lable" Text="Insulin:" Style="{StaticResource TextBlockStyle}" />
+
+                    <TextBlock x:Name="rosiglitazone_lable" Text="Rosiglitazone:" Style="{StaticResource TextBlockStyle}" />
+
+                    <TextBlock x:Name="pioglitazone_lable" Text="Pioglitazone:" Style="{StaticResource TextBlockStyle}" />
+
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1"  Margin="0,10,0,0" VerticalAlignment="Top">
+                <StackPanel Orientation="Vertical">
+                    <TextBox x:Name="id"  Visibility="Collapsed"   />
+
+                    <TextBox x:Name="patient_num"   Style="{StaticResource TextBoxStyle}"  />
+                    <TextBox x:Name="encounter_id"   Style="{StaticResource TextBoxStyle}"  />
+                    <TextBox x:Name="first_name"   Style="{StaticResource TextBoxStyle}"  />
+                    <TextBox x:Name="last_name"   Style="{StaticResource TextBoxStyle}"  />
+                    <TextBox x:Name="address"   Style="{StaticResource TextBoxStyle}"  />
+
+                    <TextBox x:Name="num_age"   Style="{StaticResource TextBoxStyle}"   />
+                    <TextBox x:Name="discharge_time"   Style="{StaticResource TextBoxStyle}"   />
+                    <TextBox x:Name="date_of_birth"   Style="{StaticResource TextBoxStyle}"   />
+
+                    
+                    <TextBox x:Name="gender"  Style="{StaticResource TextBoxStyle}"  />
+
+                    <TextBox x:Name="time_in_hospital"   Style="{StaticResource TextBoxStyle}"  />
+
+                    <TextBox x:Name="metformin"   Style="{StaticResource TextBoxStyle}" />
+
+                    <TextBox x:Name="insulin"   Style="{StaticResource TextBoxStyle}" />
+
+                    <TextBox x:Name="rosiglitazone"   Style="{StaticResource TextBoxStyle}"  />
+
+                    <TextBox x:Name="pioglitazone"   Style="{StaticResource TextBoxStyle}" />
+
+
+                </StackPanel>
+            </Grid>
+
+            <!--Patient Data - middle  column -->
+            <Grid Grid.Row="2" Grid.Column="2" Margin="20,10,0,0" VerticalAlignment="Top">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="Admissiontype_lable" Text="Admission Type:" Style="{StaticResource TextBlockStyle}" />
+
+                    <TextBlock x:Name="admission_source_id_lable" Text="Admission_source:" Style="{StaticResource TextBlockStyle}" />
+
+
+                    <TextBlock x:Name="number_outpatient_lable" Text="Number_outpatient:" Style="{StaticResource TextBlockStyle}"/>
+
+                    <TextBlock x:Name="number_inpatient_lable" Text="Number_inpatient:" Style="{StaticResource TextBlockStyle}" />
+
+                    <TextBlock x:Name="number_emergency_lable" Text="Number_emergency:" Style="{StaticResource TextBlockStyle}" />
+
+                    <TextBlock x:Name="number_diagnoses_lable" Text="Number_diagnoses:" Style="{StaticResource TextBlockStyle}" />
+
+                    <TextBlock x:Name="num_procedures_lable" Text="Num_procedures:" Style="{StaticResource TextBlockStyle}" />
+
+                    <TextBlock x:Name="num_lab_procedures_lable" Text="Num_lab_procedures:" Style="{StaticResource TextBlockStyle}" />
+
+                    <TextBlock x:Name="diag_1_lable" Text="Diag_1:" Style="{StaticResource TextBlockStyle}" />
+
+                    <TextBlock x:Name="diabetesMed_lable" Text="DiabetesMed:" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock x:Name="zipcode_lable" Text="Zipcode:" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock x:Name="discharge_disposition_id_lable" Text="Discharge Disposition:" Style="{StaticResource TextBlockStyle}" />
+
+                    <TextBlock x:Name="readmitted_lable"  Text="Readmitted:" Style="{StaticResource TextBlockStyle}" />
+
+
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="3"   Margin="20,10,0,0" VerticalAlignment="Top">
+                <StackPanel Orientation="Vertical">
+                    <!--<TextBox x:Name="admission_type_id"   Style="{StaticResource TextBoxStyle}"  />-->
+                    <ComboBox x:Name="admission_type_id"  Style="{StaticResource ComboboxStyle}" />
+
+                    <TextBox   x:Name="admission_source_id" Style="{StaticResource TextBoxStyle}"  />
+
+                    <TextBox x:Name="number_outpatient"  Style="{StaticResource TextBoxStyle}"  />
+
+                    <TextBox x:Name="number_inpatient"   Style="{StaticResource TextBoxStyle}"  />
+
+                    <TextBox x:Name="number_emergency"  Style="{StaticResource TextBoxStyle}"  />
+
+                    <TextBox x:Name="number_diagnoses"   Style="{StaticResource TextBoxStyle}"  />
+
+                    <TextBox x:Name="num_procedures"   Style="{StaticResource TextBoxStyle}" />
+
+                    <TextBox x:Name="num_lab_procedures"  Style="{StaticResource TextBoxStyle}" />
+
+                    <TextBox x:Name="diag_1"    Style="{StaticResource TextBoxStyle}"  />
+
+                    <TextBox x:Name="diabetesMed"    Style="{StaticResource TextBoxStyle}" />
+                    <TextBox x:Name="zipcode"   Style="{StaticResource TextBoxStyle}"  />
+                    <TextBox x:Name="discharge_disposition_id"   Text="{Binding Discharge_disposition_id}" Style="{StaticResource TextBoxStyle}" />
+
+                    <TextBox x:Name="readmitted"   Style="{StaticResource TextBoxStyle}" />
+                    
+
+                </StackPanel>
+            </Grid>
+
+
+            <Grid Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" Margin="20,10,0,0" VerticalAlignment="Top" >
+                <!--Source="ms-appx:///Images/juan-carlos.jpg"-->
+                <Image x:Name="PatientPhoto"    HorizontalAlignment="Right" Height="200"    Width="200" Visibility="Visible" VerticalAlignment="Top" />
+                <TextBox x:Name="imageuri"  Visibility="Collapsed" />
+
+            </Grid>
+
+
+            <Grid Grid.Row="2" Grid.Column="4" Margin="20,220,0,0" VerticalAlignment="Top">
+                <StackPanel Orientation="Vertical">
+
+                    <Button x:Name="ButtonUpdateImage" Content="Click to Update Photo" Style="{StaticResource textButtonStyle}"/>
+
+
+                    <TextBlock x:Name="daily_Minutes_walking_lable" Text="Daily_Minutes_walking:" Style="{StaticResource TextBlockStyle}" />
+
+
+                    <TextBlock x:Name="pct_calories_from_carbs_lable" Text="Pct_calories_from_carbs:" Style="{StaticResource TextBlockStyle}"/>
+
+
+                    <TextBlock x:Name="bmi_lable" Text="BMI:" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock x:Name="weight_lable" Text="Weight:" Style="{StaticResource TextBlockStyle}" />
+                    <TextBlock x:Name="height_lable" Text="Height:" Style="{StaticResource TextBlockStyle}" />
+
+
+
+                    
+                    <TextBlock x:Name="sd_glucose_lable" Text="SD_glucose:" Style="{StaticResource TextBlockStyle}" />
+
+
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="5" Margin="20,220,0,0" VerticalAlignment="Top">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="OutputTextBlock" Style="{StaticResource TextBlockStyle}" TextWrapping="Wrap"/>
+
+                    <TextBox   x:Name="daily_Minutes_walking"     Style="{StaticResource TextBoxStyle}"  />
+
+                    <TextBox x:Name="pct_calories_from_carbs"   Style="{StaticResource TextBoxStyle}"  />
+
+
+
+                    <TextBox x:Name="bmi"   Style="{StaticResource TextBoxStyle}"  />
+                    <TextBox x:Name="weight"   Style="{StaticResource TextBoxStyle}"  />
+                    <TextBox x:Name="height"   Style="{StaticResource TextBoxStyle}"  />
+
+
+                    <TextBox x:Name="sd_glucose"   Style="{StaticResource TextBoxStyle}"  />
+
+
+
+                </StackPanel>
+            </Grid>
+
+
+            <!--Notes -->
+
+            <!--<Grid Grid.Row="3"  Margin="0,10,0,0" VerticalAlignment="Top" >
+
+
+                <TextBlock Name="Notes_Label" Text="Notes:"   Style="{StaticResource TextBlockStyle}"/>
+
+            </Grid>-->
+            <!--<Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5" Margin="0,10,0,0" VerticalAlignment="Top" >
+
+
+                <TextBox Name="Notes"   MinWidth="300" Height="30" ></TextBox>
+
+            </Grid>-->
+
+            <!--prediction -->
+
+
+            <Grid Grid.Row="3" Grid.Column="0" Margin="0,10,0,0"   VerticalAlignment="Top" >
+            <TextBlock Name="Prediction_Label"    Style="{StaticResource TextBlockStyle}" Text="Likelihood of Readmission:" />
+            </Grid>
+
+
+            <Grid Grid.Row="3" Grid.Column="1"   Grid.ColumnSpan="5" Margin="0,10,0,0" VerticalAlignment="Top" >
+                     <TextBox   Name="Prediction"   MinWidth="50"  Height="70" TextWrapping="Wrap" ></TextBox>
+
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Page>
